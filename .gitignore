@@ -1,1 +1,6 @@
 venv
+db.sqlite3
+.env
+portfolio/__pycache__
+portfolio/migrations/__pycache__
+portfolio_backend/__pycache__
