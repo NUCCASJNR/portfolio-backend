@@ -20,7 +20,7 @@ class SendEmail(APIView):
                 return Response({'message': 'All fields are required'}, status=status.HTTP_400_BAD_REQUEST)
 
         # Construct the subject and message for the email
-        subject = 'Contact Form Submission'
+        subject = 'Someone visited your portfolio website and sent you a message'
         message_body = f"Name: {first_name} {last_name}\nEmail: {email}\nContact: {contact}\n\nMessage:\n{message}"
 
         # Send the email
