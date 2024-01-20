@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'portfolio'
+    'portfolio',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -50,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'portfolio_backend.urls'
@@ -132,3 +134,9 @@ EMAIL_PORT=getenv('EMAIL_PORT')
 EMAIL_HOST_USER=getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD=getenv('EMAIL_PWD')
 EMAIL_USE_TLS=True
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "https://codewithalareef.me"
+]
