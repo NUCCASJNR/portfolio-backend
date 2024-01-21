@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wy(zi2rj7byib@ohbd2uq06w=t1r3l6313qf(zot+f=wpaj&w6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -139,4 +139,35 @@ EMAIL_USE_TLS=True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "https://codewithalareef.me"
+]
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization",
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with"
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://codewithalareef.me",
+    "https://portfolio-backend-production-9b67.up.railway.app/"
+    "http://localhost:3000",
+]
+
+CORS_ALLOW_CREDENTIALS: True
+
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
 ]
