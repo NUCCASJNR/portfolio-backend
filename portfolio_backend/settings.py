@@ -157,7 +157,7 @@ CORS_ALLOW_HEADERS = [
 
 CSRF_TRUSTED_ORIGINS = [
     "https://codewithalareef.me",
-    "https://portfolio-backend-production-9b67.up.railway.app/"
+    "https://portfolio-backend-production-9b67.up.railway.app"
     "http://localhost:3000",
 ]
 
@@ -171,3 +171,5 @@ CORS_ALLOW_METHODS = [
     "POST",
     "PUT",
 ]
+
+APPEND_SLASH = True
