@@ -7,21 +7,19 @@ from rest_framework import status
 class SendEmail(APIView):
     def post(self, request, *args, **kwargs):
         data = request.data
-        first_name = data['first_name']
-        last_name = data['last_name']
+        name = data['name']
         email = data['email']
-        contact = data['contact']
         message = data['message']
         
         # Check if any required field is empty
-        required_fields = [first_name, last_name, email, contact, message]
+        required_fields = [name, email, message]
         for field in required_fields:
             if field == '':
                 return Response({'message': 'All fields are required'}, status=status.HTTP_400_BAD_REQUEST)
 
         # Construct the subject and message for the email
         subject = 'Someone visited your portfolio website and sent you a message'
-        message_body = f"Name: {first_name} {last_name}\nEmail: {email}\nContact: {contact}\n\nMessage:\n{message}"
+        message_body = f"Name: {name}\nEmail: {email}\nMessage:\n{message}"
 
         # Send the email
         try:
